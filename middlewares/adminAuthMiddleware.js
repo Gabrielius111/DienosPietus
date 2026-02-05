@@ -1,4 +1,4 @@
-const asyncHandler = require("express-async=handler");
+const asyncHandler = require("express-async-handler");
 const {getUser, notAuthorizeMessage} = require("./helper/user.js");
 
 const protectAdmin = asyncHandler(async (req, res, next) => {
@@ -17,4 +17,4 @@ const protectAdmin = asyncHandler(async (req, res, next) => {
 });
 
     
-    module.exports = {protectAdmin};
+    module.exports = { protectAdmin };

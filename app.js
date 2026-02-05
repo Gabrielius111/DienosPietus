@@ -5,6 +5,7 @@ const express = require("express");
 const connectDB = require("./configuration/db.js");
 const port = process.env.PORT || 8080;
 const userRouter = require("./routes/userRoutes.js");
+const categoryRouter = require("./routes/categoryRoutes.js");
 
 
 const app = express();
@@ -14,6 +15,7 @@ connectDB();
 
 // users
 app.use("/users", userRouter); // POST, localhost:3000/user/register
+app.use("/categories", categoryRouter); // POST, localhost:3000/categories
 
 ////
 app.listen(port, () => {
