@@ -6,17 +6,18 @@ const connectDB = require("./configuration/db.js");
 const port = process.env.PORT || 8080;
 const userRouter = require("./routes/userRoutes.js");
 const categoryRouter = require("./routes/categoryRoutes.js");
-
+const dishRouter = require("./routes/dishRoutes.js");
 
 const app = express();
 app.use(express.json());
 
+
 connectDB();
 
-// users
-app.use("/users", userRouter); // POST, localhost:3000/user/register
-app.use("/categories", categoryRouter); // POST, localhost:3000/categories
-
+// routes
+app.use("/users", userRouter); // POST, localhost:8000/user/register
+app.use("/categories", categoryRouter); // POST, localhost:8000/categories
+app.use("/dishes", dishRouter); // POST localhost:8000/dishes
 ////
 app.listen(port, () => {
     console.log(`Server is running on port ${process.env.PORT}`);

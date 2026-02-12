@@ -20,14 +20,14 @@ async function getUser(req){
 
       const user = await User.findById(decoded.id).select("-password"); // find users
 
-      return {status: 200, response2: user };
+      return {status: 200, response: user };
 
     } catch (error){
       console.error(error);
       return {status: 401, response: NOT_AUTHORIZED};
     }
   }
-  return {status: 401, response4: NOT_AUTHORIZED};
+  return {status: 401, response: NOT_AUTHORIZED};
 }
 
 module.exports = {getUser, notAuthorizeMessage:NOT_AUTHORIZED};
